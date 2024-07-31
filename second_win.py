@@ -6,7 +6,11 @@ from final_win import FinalWin
 
 class Experiment():
     def __init__(self, age, test1, test2, test3):
-        pass
+        self.le2 = int(age)
+        self.le3 = test1
+        self.le4 = test2
+        self.le5 = test3
+    
 
 class SecondWin(QWidget):
     def __init__(self):
@@ -18,9 +22,10 @@ class SecondWin(QWidget):
     
     def next_click(self):
         self.hide()
-        self.fw = FinalWin()
-        self.exp = Experiment ()
-    
+        self.exp = Experiment (self.le2.text(),self.le3.text(),self.le4.text(),self.le5.text())
+        self.fw = FinalWin(self.exp)
+
+
     def set_appear(self):
         self.setWindowTitle(txt_titel)
         self.resize(win_width , win_height)
@@ -121,6 +126,7 @@ class SecondWin(QWidget):
         self.h_linr.addLayout(self.l_linr)
         self.h_linr.addLayout(self.r_linr)
         self.setLayout(self.h_linr)
+
 
     def connects(self):
         self.b1.clicked.connect(self.timer_test)
