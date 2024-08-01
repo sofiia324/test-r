@@ -82,7 +82,7 @@ class FinalWin(QWidget):
 
     def initUI(self):
         self.work_text = QLabel(txt_workheart + self.results())
-        self.index_text = QLabel(txt_index + str(txt_index))
+        self.index_text = QLabel(txt_index + str(self.index))
         self.layout =  QVBoxLayout()
         self.layout.addWidget(self.work_text, alignment=Qt.AlignCenter)
         self.layout.addWidget(self.index_text, alignment=Qt.AlignCenter)
